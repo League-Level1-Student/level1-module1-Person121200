@@ -7,8 +7,8 @@ import java.awt.event.KeyEvent;
 
 public class Rocket implements GameControlScene {
 
-	double acceleration = 15;
-	double torque = 15;
+	double acceleration = 30;
+	double torque = 20;
 	double angle = 0;
 	int x, y, size;
 	Rectangle collisionBox;
@@ -33,7 +33,18 @@ public class Rocket implements GameControlScene {
 	 * 
 	 * With this you can run the game. use WASD to move and SPACE to fire
 	 */
-
+	public Rocket() {
+		this.x = AsteroidsGame.WIDTH / 2;
+		this.y = AsteroidsGame.HEIGHT / 2;
+		this.size = 10;
+		this.collisionBox = new Rectangle(x - this.size / 2, y - this.size / 2, this.size, this.size);
+	}
+	public Rocket(int x, int y) {
+		this.x = x;
+		this.y = y;
+		this.size = 10;
+		this.collisionBox = new Rectangle(x - this.size / 2, y - this.size / 2, this.size, this.size);
+	}
 	/*
 	 * 3. If we want to be able to choose where to place the rocket we can create a
 	 * constructor that has parameters for x and y we can do this like any other

@@ -36,7 +36,7 @@ public class AsteroidsGame implements GameScene, ActionListener {
 	ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 	Timer spawner;
 	Timer rof;
-	int lives = 3;
+	int lives = 69420;
 
 	public AsteroidsGame() {
 		if (rocket.collisionBox == null) {

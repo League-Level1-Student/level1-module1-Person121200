@@ -12,7 +12,7 @@ import javax.swing.Timer;
 public class Bullet implements ActionListener {
 
 	int x, y;
-	int speed = 20;
+	int speed = 10;
 	int size = 5;
 	double angle;
 	Rectangle coll;
