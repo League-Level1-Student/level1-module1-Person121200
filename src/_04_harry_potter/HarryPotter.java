@@ -20,6 +20,7 @@ public class HarryPotter {
 
 	HarryPotter() {
 		System.out.println("making Harry Potter...");
+		
 	}
 
 	void castSpell(String spell) {
