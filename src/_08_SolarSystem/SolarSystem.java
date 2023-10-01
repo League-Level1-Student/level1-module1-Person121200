@@ -16,7 +16,8 @@ import game_tools.GameControlScene;
  * 
  * Objective:
  * Create a planet object for each of the planets in our solar system and
- *   - make them distinct colors
+ *   - make them distinct colors(how many days it takes the planet to circle the sun)
+ *    b. Assign the membe
  *   - place them in the correct relative distance from the sun.
  *   - make them the correct relative size.
  *   - make them orbit around the sun at the correct relative speed.
@@ -25,8 +26,7 @@ import game_tools.GameControlScene;
  *    a. Add member variables for:
  *       - planet color
  *       - distance from sun
- *       - orbital period (how many days it takes the planet to circle the sun)
- *    b. Assign the member variables in the constructor
+ *       - orbital period r variables in the constructor
  * 
  * 2. In this class:
  *    a. Create Planet objects as member variables for each planet using the
@@ -62,11 +62,17 @@ public class SolarSystem implements GameControlScene {
     /*
      * Member variables
      */
+    
     int sunX, sunY;
     Long startTimeMs = null;
     Game gameFrame = new Game("Solar System");
     
-    Planet earth = new Planet(12);
+    Planet earth = new Planet(12, 149600000, 365.2, Color.BLUE);
+    Planet Mars = new Planet(6792/1000, 227900000, 687, Color.RED);
+    Planet Jupiter = new Planet(142984/1000, 778600000, 4331, Color.ORANGE);
+    Planet Saturn = new Planet(120536/1000, 1433500000, 10747, Color.YELLOW);
+    Planet Uranus = new Planet(51118/1000, 2872500000L  , 30589, Color.CYAN);  
+
     
     public SolarSystem() {
         gameFrame.setScene(this);
@@ -77,6 +83,17 @@ public class SolarSystem implements GameControlScene {
          * Add Earth's moon
          */
         earth.addMoon();
+        for(int i = 0; i < 79; i++) {
+        	Jupiter.addMoon();
+        }
+        for(int i = 0; i < 82; i++) {
+        	Saturn.addMoon();
+        }
+        for(int i = 0; i < 27; i++) {
+        	Uranus.addMoon();
+        }
+        
+        Saturn.addMoon();
         
         sunX = CENTER_X - SUN_RADIUS_PIXELS;
         sunY = CENTER_Y - SUN_RADIUS_PIXELS;
@@ -118,6 +135,11 @@ public class SolarSystem implements GameControlScene {
          * Add planets here
          */
         earth.draw(g, numDays);
+        Jupiter.draw(g, numDays);
+        Mars.draw(g, numDays);
+        Saturn.draw(g, numDays);
+        Uranus.draw(g, numDays);
+        
     }
     
     @Override

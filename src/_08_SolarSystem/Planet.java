@@ -9,21 +9,30 @@ public class Planet {
     /*
      * Member variables
      */
+//	SolarSystem solor = new SolarSystem();
     int x, y, width, height;
     int diameter;
-    
-    public Planet(int diameterPixels) {
+    long distance;
+    double r;
+    Color color;
+    public Planet(int diameterPixels, long distance, double r, Color color) {
         this.diameter = diameterPixels;
+        this.distance = distance;
+        this.r = r;
+        this.color = color;
+       
     }
 
-    public void draw(Graphics g, int numDays) {
+
+
+	public void draw(Graphics g, int numDays) {
         /*
          * Local variables
          * Reassign or remove these after creating the correct member variables
          */
-        int avgDistFromSun = 1496 / 10;     // You can choose a different scaling than divided by 10
-        int orbitalPeriod = 365;
-        Color color = Color.BLUE;
+        int avgDistFromSun = (int) (distance/5000000);     // You can choose a different scaling than divided by 10
+        int orbitalPeriod = (int) r;
+       
         
         /*
          * Update position
